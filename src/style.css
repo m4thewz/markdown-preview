@@ -3,3 +3,37 @@
   border: 0;
   box-sizing: border-box;
 }
+
+body {
+  height: 100vh;
+}
+
+nav {
+  width: 100vw;
+  padding: 0.7em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #2b2b2b;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  gap: 1em;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li:hover,
+nav ul li input,
+nav a:hover {
+  color: #ffffffaa;
+  cursor: pointer;
+}

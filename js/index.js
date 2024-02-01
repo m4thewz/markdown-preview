@@ -48,17 +48,15 @@ checkbox.addEventListener("change", (e) => {
   scrollBarSync = e.currentTarget.checked;
 });
 
-document
-  .querySelector("#edit .ace_scrollbar")
-  .addEventListener("scroll", (e) => {
-    if (!scrollBarSync) return;
+document.querySelector("#edit").addEventListener("scroll", (e) => {
+  if (!scrollBarSync) return;
 
-    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-    const ratio = scrollTop / (scrollHeight - clientHeight);
+  const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
+  const ratio = scrollTop / (scrollHeight - clientHeight);
 
-    const previewElement = document.querySelector("#preview");
-    const targetY =
-      (previewElement.scrollHeight - previewElement.clientHeight) * ratio;
+  const previewElement = document.querySelector("#preview");
+  const targetY =
+    (previewElement.scrollHeight - previewElement.clientHeight) * ratio;
 
-    previewElement.scrollTo(0, targetY);
-  });
+  previewElement.scrollTo(0, targetY);
+});
